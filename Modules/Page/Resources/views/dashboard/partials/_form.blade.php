@@ -1,29 +1,40 @@
 @include('partials.dashboard.tinymce')
 
-<div class="form-group">
-    {{ Form::label('name', 'Oldal neve') }}
-    {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Oldal megnevezése...']) }}
-</div>
+<div class="row">
 
-<div class="form-group">
-    {{ Form::label('url', 'Url') }}
-    {{ Form::text('url', null, ['class' => 'form-control', 'placeholder' => 'Url...']) }}
-</div>
+    <div class="col-xs-12 col-md-6">
 
-<div class="form-group">
-    {{ Form::label('title', 'Title') }}
-    {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'A böngésző fül neve...']) }}
-</div>
+        <div class="form-group">
+            {{ Form::label('name', 'Oldal neve') }}
+            {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Oldal megnevezése...']) }}
+        </div>
 
+        <div class="form-group">
+            {{ Form::label('url', 'Url') }}
+            {{ Form::text('url', null, ['class' => 'form-control', 'placeholder' => 'Url...']) }}
+        </div>
 
-<div class="form-group">
-    {{ Form::label('keywords', 'Meta keywords') }}
-    {{ Form::text('keywords', null, ['class' => 'form-control', 'placeholder' => 'Meta kulcsszavak vesszővel elválasztva...']) }}
-</div>
+        <div class="form-group">
+            {{ Form::label('title', 'Title') }}
+            {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'A böngésző fül neve...']) }}
+        </div>
 
-<div class="form-group">
-    {{ Form::label('description', 'Meta description') }}
-    {{ Form::textarea('description', null, ['class' => 'form-control', 'placeholder' => 'Meta leírás...']) }}
+        <div class="form-group">
+            {{ Form::label('keywords', 'Meta keywords') }}
+            {{ Form::text('keywords', null, ['class' => 'form-control', 'placeholder' => 'Meta kulcsszavak vesszővel elválasztva...']) }}
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+
+        <div class="form-group">
+            {{ Form::label('description', 'Meta description') }}
+            {{ Form::textarea('description', null, ['rows' => 12, 'class' => 'form-control', 'placeholder' => 'Meta leírás...']) }}
+        </div>
+
+    </div>
+
 </div>
 
 <div class="form-group">

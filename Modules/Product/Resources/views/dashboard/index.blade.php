@@ -1,23 +1,23 @@
 @extends('dashboard::layouts.master')
-@include('dashboard::layouts.partials._confirmation')
 @php
 $modul = 'product';
 $newString = 'Termék';
 @endphp
-@section('title', config('ibolya.title_prefix') . 'Tortakezelő')
+@section('title', config('hunion.title_prefix') . 'Tortakezelő')
 
 @section('content')
-    <h1>Torták:</h1>
-    <div><a class="btn btn-success" href="{{ url('dashboard/product/create') }}">Új termék hozzáadása</a></div>
+
+    <div class="crud-index-header">
+        <h1>Termékek</h1>
+        <a class="btn btn-success" href="{{ url('dashboard/product/create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Új termék hozzáadása</a>
+    </div>
+
     @if(count($products) > 0)
         <table class="table table-responsive">
             <thead>
             <tr>
                 <th>#</th>
                 <th>Megnevezés</th>
-                <th>Kategória</th>
-                <th>10 szeletes ára</th>
-                <th>20 szeletes ára</th>
                 <th>Kép</th>
                 <th>Létrehozva</th>
                 <th>Legutolsó Módosítás</th>
@@ -28,22 +28,14 @@ $newString = 'Termék';
             @php
                 $productCounter = 0;
             @endphp
-            @foreach($products as $product)
+            @foreach($products as $key => $product)
                 <tr>
-                    <td><a href="product/{{ $product->id }}/edit">{{ ++$productCounter }}</a></td>
+                    <td><a href="product/{{ $product->id }}/edit">{{ $key + 1 + (($products->currentPage() - 1) * $products->perPage())}}.</a></td>
                     <td>{{ $product->name }}</td>
-                    <td>
-                        @foreach($product->categories as $category)
-                            {{ $category->name }}
-                        @endforeach
-                    </td>
-                    <td>{{ $product->_10pcs_price . config('ibolya.currency') }}</td>
-                    <td>{{ $product->_20pcs_price . config('ibolya.currency') }}</td>
                     <td><img src="{{asset('images/product/tn-'.$product->image)}}" height="50px"></td>
                     <td>{{ $product->created_at }} - {{ $product->created_at->diffForHumans() }}</td>
                     <td>{{ $product->updated_at }} - {{ $product->updated_at->diffForHumans() }}</td>
                     <td>  @include('dashboard::layouts.partials._row_actions_min',['row_id'=> $product->id]) </td>
-
                 </tr>
             @endforeach
             </tbody>

@@ -12,27 +12,20 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/dashboard') }}">
-                {{ config('app.name', 'Laravel') }}
+                {{ config('app.name', 'Kezelőpult') }}
             </a>
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
+
                 <li>
-                    <a href="/dashboard/">Főoldal</a>
+                    <a href="/dashboard/product">Termékek</a>
                 </li>
 
                 <li>
-                    <a href="/dashboard/category">Kategóriák</a>
-                </li>
-
-                <li>
-                    <a href="/dashboard/product">Tortakezelő</a>
-                </li>
-
-                <li>
-                    <a href="/dashboard/productwithunit">Süteménykezelő</a>
+                    <a href="/dashboard/menu">Menükezelő</a>
                 </li>
 
                 <li>
@@ -40,8 +33,10 @@
                 </li>
 
                 <li>
-                    <a href="/dashboard/menu">Menükezelő</a>
+                    <a href="/dashboard/order">Ajánlatkérések</a>
                 </li>
+
+
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -49,8 +44,8 @@
                 <li><a href="/" target="_blank">Oldal mutatása</a></li>
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a href="{{ url('/dashboard/login') }}">Bejelentkezés</a></li>
+                    <li><a href="{{ url('/dashboard/register') }}">Regisztráció</a></li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -59,13 +54,13 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="{{ url('/logout') }}"
+                                <a href="{{ url('/dashboard/logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     Kijelentkezés
                                 </a>
 
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ url('/dashboard/logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
                             </li>

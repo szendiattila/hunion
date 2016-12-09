@@ -1,26 +1,16 @@
 <div class="form-group">
     {{ Form::label('name', 'Termék neve') }}
-    {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'A torta megnevezése...', 'required']) }}
+    {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Termék megnevezése...', 'required']) }}
 </div>
 
 <div class="form-group">
-    {{ Form::label('category_list', 'Termék kategória') }}
-    {{ Form::select('category_list[]', $categories, null, ['class' => 'form-control', 'placeholder' => 'Válaszd ki a torta kategóriáját...', 'required']) }}
+    {{ Form::label('intro', 'Termék rövid leírás') }}
+    {{ Form::textarea('intro', null, ['class' => 'form-control', 'placeholder' => 'Rövid leírás...', 'required']) }}
 </div>
 
 <div class="form-group">
     {{ Form::label('description', 'Termék leírás') }}
-    {{ Form::textarea('description', null, ['class' => 'form-control', 'placeholder' => 'A torta leírása...', 'required']) }}
-</div>
-
-<div class="form-group">
-    {{ Form::label('_10pcs_price', '10 szeletes ára') }}
-    {{ Form::number('_10pcs_price', null, ['class' => 'form-control', 'placeholder' => 'A torta ára (10 szelet)...', 'required']) }}
-</div>
-
-<div class="form-group">
-    {{ Form::label('_20pcs_price', '20 szeletes ára') }}
-    {{ Form::number('_20pcs_price', null, ['class' => 'form-control', 'placeholder' => 'A torta ára (20 szelet)...', 'required']) }}
+    {{ Form::textarea('description', null, ['class' => 'form-control', 'placeholder' => 'Részletes leírás...', 'required']) }}
 </div>
 
 <div class="form-group">

@@ -1,14 +1,36 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            {{--<li><a href="/">Home</a></li>--}}
-            {{--<li><a href="rolunk">Rólunk</a></li>--}}
-            {{--<li><a href="rendeles">Tortarendelés</a></li>--}}
-            {{--<li><a href="cukraszda">Egyéb sütemények</a></li>--}}
-            {{--<li><a href="kapcsolat">Kapcsolat</a></li>--}}
-            @foreach($menus as $menu)
-                <li><a href="{{ $menu->url }}">{{ $menu->name }}</a></li>
-            @endforeach
-        </ul>
+<div class="container">
+
+    <div class="row front-navbar">
+
+        <div class="col-xs-12 col-sm-9 col-sm-push-3 col-md-10 col-md-push-2 col-lg-10 col-lg-push-2">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            @foreach($menus as $menu)
+                                <li><a href="{{ $menu->url }}">{{ $menu->name }}</a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-sm-pull-9 col-md-2 col-md-pull-10 col-lg-2 col-lg-pull-10">
+            <div class="logo-container">
+                <img src="{{ asset('images/sitebuild/logo.png') }}" alt="Hunion R.E. Kft" width="100%">
+            </div>
+        </div>
+
     </div>
-</nav>
+
+
+</div>

@@ -3,9 +3,7 @@
 namespace Modules\Product\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\FileUploadController;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\Category\Entities\Category;
 use Modules\Product\Entities\Product;
 use Modules\Product\Http\Requests\ProductRequest;
 
@@ -13,16 +11,14 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('categories')->paginate();
+        $products = Product::paginate();
 
         return view('product::dashboard.index', compact('products'));
     }
 
     public function create()
     {
-        $categories = Category::pluck('name', 'id');
-
-        return view('product::dashboard.create', compact('categories'));
+        return view('product::dashboard.create');
     }
 
     public function store(ProductRequest $request)
@@ -31,27 +27,21 @@ class ProductController extends Controller
 
         $request->request->add(['image' => $imageName]);
 
-        $product = Product::create($request->input());
-
-        $product->categories()->sync($request->input('category_list'));
+        Product::create($request->input());
 
         return redirect('dashboard/product');
     }
 
     public function edit(Product $product)
     {
-        $categories = Category::pluck('name', 'id');
-
-        return view('product::dashboard.edit', compact('product', 'categories'));
+        return view('product::dashboard.edit', compact('product'));
     }
 
-    public function update(Product $product, Request $request)
+    public function update(Product $product, ProductRequest $request)
     {
         $this->handleImage($product, $request);
 
         $product->update($request->input());
-
-        $product->categories()->sync($request->input('category_list'));
 
         return redirect('dashboard/product');
     }
@@ -67,9 +57,9 @@ class ProductController extends Controller
 
     /**
      * @param Product $product
-     * @param Request $request
+     * @param ProductRequest $request
      */
-    private function handleImage(Product $product, Request $request)
+    private function handleImage(Product $product, ProductRequest $request)
     {
         if ($request->file('image')) {
             $this->deleteImage($product);

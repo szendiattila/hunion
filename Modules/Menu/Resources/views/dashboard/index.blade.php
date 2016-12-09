@@ -1,23 +1,26 @@
 @extends('dashboard::layouts.master')
-@include('dashboard::layouts.partials._confirmation')
 @php
 $modul = 'menu';
 @endphp
 @section('title', config('ibolya.title_prefix') . 'Menükezelő')
 
 @section('content')
-    <h1>Menüpontok:</h1>
-    <div><a class="btn btn-success" href="{{ url('dashboard/menu/create') }}">Új menüpont hozzáadása</a></div>
+
+    <div class="crud-index-header">
+        <h1>Menüpontok</h1>
+        <a class="btn btn-success" href="{{ url('dashboard/menu/create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Új menüpont hozzáadása</a>
+    </div>
+
     @if(count($menus) > 0)
 
         <ul>
             <li style="list-style-type: none;">
                 <div class="row">
-                    <div class="col-xs-2">#</div>
+                    <div class="col-xs-1">#</div>
                     <div class="col-xs-2">Megnevezés</div>
                     <div class="col-xs-3">Létrehozva</div>
                     <div class="col-xs-3">Módosítva</div>
-                    <div class="col-xs-2">Műveletek</div>
+                    <div class="col-xs-3">Műveletek</div>
                 </div>
             </li>
         </ul>
@@ -25,11 +28,11 @@ $modul = 'menu';
             @foreach($menus as $key => $menu)
                 <li class="sort-item" id="{{ $menu->id }}">
                     <div class="sortable-item row">
-                        <div class="col-xs-2">{{ $key + 1 }}</div>
+                        <div class="col-xs-1">{{ $key + 1 }}</div>
                         <div class="col-xs-2">{{ $menu->name }}</div>
                         <div class="col-xs-3">{{ $menu->created_at }} - {{ $menu->created_at->diffForHumans() }}</div>
                         <div class="col-xs-3">{{ $menu->updated_at }} - {{ $menu->updated_at->diffForHumans() }}</div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-3">
                             @include('dashboard::layouts.partials._row_actions_min',['row_id'=> $menu->id])
                         </div>
                     </div>
@@ -53,7 +56,6 @@ $modul = 'menu';
     <script src="{{ url('/js/jquery/jquery.js') }}"></script>
     <script src="{{ url('/js/jquery/jquery_ui.js') }}"></script>
     <script src="{{ url('/plugins/nestedSortable/jquery.mjs.nestedSortable.js') }}"></script>
-    {{--<script src="{{ url('js/dashboard/change_order.js') }}"></script>--}}
 
     <script>
         function saveOrder(tkn, table)

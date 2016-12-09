@@ -1,13 +1,16 @@
 @extends('dashboard::layouts.master')
-@include('dashboard::layouts.partials._confirmation')
 @php
 $modul = 'page';
 @endphp
 @section('title', config('ibolya.title_prefix') . 'Oldal kezelő')
 
 @section('content')
-    <h1>Torták:</h1>
-    <div><a class="btn btn-success" href="{{ url('dashboard/page/create') }}">Új oldal hozzáadása</a></div>
+
+    <div class="crud-index-header">
+        <h1>Oldalak</h1>
+        <a class="btn btn-success" href="{{ url('dashboard/page/create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Új oldal hozzáadása</a>
+    </div>
+
     @if(count($pages) > 0)
         <table class="table table-responsive">
             <thead>

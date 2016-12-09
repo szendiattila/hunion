@@ -15,10 +15,10 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'intro' => 'required',
             'description' => 'required',
-            'image' => 'required|image',
-            '_10pcs_price' => 'required',
-            '_20pcs_price' => 'required',
+            'packings' => 'required',
+            'image' => 'image'
         ];
     }
 
@@ -26,11 +26,10 @@ class ProductRequest extends FormRequest
     {
         return [
             'name.required' => 'Kötelező a termék nevét megadni',
+            'intro.required' => 'Kötelező a rövid leírást megadni',
             'description.required' => 'Kötelező a termék leírást megadni',
-            'image.required' => 'Kötelező a termék képet megadni',
-            'image.image' => 'Kötelező a termék képet megadni',
-            '_10pcs_price.required' => 'Kötelező a 10 szeletes termék árát megadni',
-            '_20pcs_price.required' => 'Kötelező a 20 szeletes termék árát megadni',
+            'packings.required' => 'Kötelező a termék kiszerelését megadni',
+            'image.image' => 'Kötelező a termék képet megadni'
         ];
     }
 

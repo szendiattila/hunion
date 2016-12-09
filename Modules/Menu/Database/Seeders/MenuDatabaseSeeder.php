@@ -4,6 +4,7 @@ namespace Modules\Menu\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Menu\Entities\Menu;
 
 class MenuDatabaseSeeder extends Seeder
 {
@@ -16,6 +17,30 @@ class MenuDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        Menu::truncate();
+
+        Menu::create([
+            'name' => 'Cégünkről',
+            'url' => 'cegunkrol',
+            'order' => 1
+        ]);
+
+        Menu::create([
+            'name' => 'Termékeink',
+            'url' => 'termekeink',
+            'order' => 2
+        ]);
+
+        Menu::create([
+            'name' => 'Szolgáltatások',
+            'url' => 'szolgaltatasok',
+            'order' => 3
+        ]);
+
+        Menu::create([
+            'name' => 'Kapcsolat',
+            'url' => 'kapcsolat',
+            'order' => 4
+        ]);
     }
 }
