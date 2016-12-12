@@ -21,6 +21,16 @@ class PageRequest extends FormRequest
         ];
     }
 
+    public function messages()
+    {
+        return [
+            'name.required' => 'Kötelező a menüpont nevét megadni',
+            'url.required' => 'Kötelező az url-t megadni',
+            'title.required' => 'Kötelező az oldal nevét megadni',
+            'content.required' => 'Kötelező a tartalmat megadni',
+        ];
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      *

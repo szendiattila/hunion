@@ -14,3 +14,5 @@
 </div>
 
 {{ Form::close() }}
+
+@include('dashboard::_errors')

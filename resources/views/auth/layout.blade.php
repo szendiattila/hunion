@@ -15,26 +15,15 @@
     <link href="/css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Scripts -->
-    <script>
-        window.Laravel =; <?php echo json_encode([
-                'csrfToken' => csrf_token(),
-        ]); ?>
-    </script>
+
     @yield('style')
 </head>
 <body>
-    @include('dashboard::layouts.partials._navbar')
 
-    @if (isset($__env->getSections()['content'])) {
-        <div class="container dashboard-content">
-            @yield('content')
-        </div>
-    @endif
-
+<div class="auth-container">
     @yield('auth-content')
-
-<!-- Scripts -->
+</div>
+        <!-- Scripts -->
 <script src="/js/app.js"></script>
 @yield('script')
 </body>

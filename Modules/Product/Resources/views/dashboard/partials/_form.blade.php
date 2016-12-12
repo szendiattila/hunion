@@ -1,3 +1,5 @@
+@include('partials.dashboard.tinymce')
+
 <div class="form-group">
     {{ Form::label('name', 'Termék neve') }}
     {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Termék megnevezése...', 'required']) }}
@@ -10,7 +12,7 @@
 
 <div class="form-group">
     {{ Form::label('description', 'Termék leírás') }}
-    {{ Form::textarea('description', null, ['class' => 'form-control', 'placeholder' => 'Részletes leírás...', 'required']) }}
+    {{ Form::textarea('description', null, ['class' => 'form-control tinymce-control', 'placeholder' => 'Részletes leírás...', 'required']) }}
 </div>
 
 <div class="form-group">
@@ -24,3 +26,5 @@
 </div>
 
 {{ Form::close() }}
+
+@include('dashboard::_errors')

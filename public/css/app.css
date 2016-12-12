@@ -7743,11 +7743,7 @@ body {
 }
 
 .logo-container {
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(139, 139, 141, 0.29);
-  padding: 20px;
   margin-bottom: -40px;
-  border-radius: 0em 0em 6em / 0.5em 6em;
 }
 
 /* Termék kártya sass */
@@ -7854,6 +7850,14 @@ body {
   color: #fff;
 }
 
+.footer .footer-logo {
+  padding: 10px;
+  background: #006293;
+  border-radius: 50%;
+  position: relative;
+  top: 50px;
+}
+
 .footer .open-hours {
   text-align: right;
 }
@@ -7878,10 +7882,37 @@ body {
   margin-bottom: 20px;
 }
 
+.form-control {
+  border-radius: 0;
+}
+
+.logo-mobil-container {
+  padding-top: 15px;
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .product-card {
     margin: 0 0 10px 0;
     width: 100%;
+  }
+  .front-navbar .navbar-default {
+    padding: 0;
+    background: #006293;
+    margin-top: 4px;
+  }
+  .front-navbar .navbar-default .navbar-nav > li > a {
+    color: #fff;
+  }
+  .logo-container {
+    display: none;
+  }
+  .logo-mobil-container {
+    display: block;
+    text-align: center;
+  }
+  .open-hours {
+    text-align: left !important;
   }
 }
 
@@ -7899,6 +7930,10 @@ body {
   justify-content: space-between;
   -webkit-box-align: start;
   align-items: flex-start;
+}
+
+.auth-container {
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=app.css.map */

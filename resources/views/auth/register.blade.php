@@ -1,6 +1,6 @@
-@extends('dashboard::layouts.master')
+@extends('auth.layout')
 
-@section('content')
+@section('auth-content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

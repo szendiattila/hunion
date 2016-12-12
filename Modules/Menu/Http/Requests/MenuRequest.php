@@ -19,6 +19,14 @@ class MenuRequest extends FormRequest
         ];
     }
 
+    public function messages()
+    {
+        return [
+            'name.required' => 'Kötelező a menüpont nevét megadni',
+            'url.required' => 'Kötelező az url-t megadni',
+        ];
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      *
