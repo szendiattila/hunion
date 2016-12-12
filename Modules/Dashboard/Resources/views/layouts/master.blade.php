@@ -26,7 +26,7 @@
 <body>
     @include('dashboard::layouts.partials._navbar')
 
-    @if (isset($__env->getSections()['content'])) {
+    @if (isset($__env->getSections()['content']))
         <div class="container dashboard-content">
             @yield('content')
         </div>
