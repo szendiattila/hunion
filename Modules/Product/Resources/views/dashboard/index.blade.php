@@ -3,7 +3,7 @@
 $modul = 'product';
 $newString = 'Termék';
 @endphp
-@section('title', config('hunion.title_prefix') . 'Tortakezelő')
+@section('title', config('hunion.title_prefix') . 'Kezelőpult')
 
 @section('content')
 
@@ -25,9 +25,6 @@ $newString = 'Termék';
             </tr>
             </thead>
             <tbody>
-            @php
-                $productCounter = 0;
-            @endphp
             @foreach($products as $key => $product)
                 <tr>
                     <td><a href="product/{{ $product->id }}/edit">{{ $key + 1 + (($products->currentPage() - 1) * $products->perPage())}}.</a></td>

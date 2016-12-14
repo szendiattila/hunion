@@ -23,9 +23,7 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
-        $imageName = FileUploadController::storeImage($request, 'image', 'product', true, 200, 200);
-
-        $request->request->add(['image' => $imageName]);
+        $this->handleStoreImage($request);
 
         Product::create($request->input());
 
@@ -76,6 +74,18 @@ class ProductController extends Controller
     private function deleteImage(Product $product)
     {
         FileUploadController::removeFile($product->image, 'product', true);
+    }
+
+    /**
+     * @param ProductRequest $request
+     */
+    public function handleStoreImage(ProductRequest $request)
+    {
+        if ($request->file('image')) {
+            $imageName = FileUploadController::storeImage($request, 'image', 'product', true, 200, 200);
+
+            $request->request->add(['image' => $imageName]);
+        }
     }
 
 

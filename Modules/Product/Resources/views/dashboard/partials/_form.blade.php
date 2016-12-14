@@ -6,13 +6,18 @@
 </div>
 
 <div class="form-group">
+    {{ Form::label('packings', 'Kiszerelés') }}
+    {{ Form::text('packings', null, ['class' => 'form-control', 'placeholder' => 'Kiszerelés...', 'required']) }}
+</div>
+
+<div class="form-group">
     {{ Form::label('intro', 'Termék rövid leírás') }}
     {{ Form::textarea('intro', null, ['class' => 'form-control', 'placeholder' => 'Rövid leírás...', 'required']) }}
 </div>
 
 <div class="form-group">
     {{ Form::label('description', 'Termék leírás') }}
-    {{ Form::textarea('description', null, ['class' => 'form-control tinymce-control', 'placeholder' => 'Részletes leírás...', 'required']) }}
+    {{ Form::textarea('description', null, ['class' => 'form-control tinymce-control', 'placeholder' => 'Részletes leírás...']) }}
 </div>
 
 <div class="form-group">
