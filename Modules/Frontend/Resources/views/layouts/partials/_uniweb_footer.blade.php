@@ -7,7 +7,7 @@
     </div>
     <div class="col-xs-12 col-sm-6">
         <div class="pull-right">
-            <img src="{{ asset('images/sitebuild/uniweb-logo.png') }}" alt="Uniweb">
+            <a href="http://uniweb.hu/" target="_blank"><img src="{{ asset('images/sitebuild/uniweb-logo.png') }}" alt="Uniweb"></a>
         </div>
     </div>
 </div>

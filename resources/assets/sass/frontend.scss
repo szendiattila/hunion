@@ -154,18 +154,16 @@ body {
 .footer {
   background-color: $mainColor;
   border-radius: 8px;
-  padding: 10px;
 
   p, h4 {
     color: #fff;
   }
 
   .footer-logo {
-    padding: 10px;
     background: $mainColor;
     border-radius: 50%;
-    position: relative;
-    top: 50px;
+    margin-top: -30px;
+    margin-bottom: -30px;
   }
 
   .open-hours {
@@ -179,10 +177,6 @@ body {
   border-bottom: 10px solid $secondaryColor;
   position: relative;
   z-index: -1;
-}
-
-.carousel-inner {
-  max-height: 270px;
 }
 
 #myCarousel {
