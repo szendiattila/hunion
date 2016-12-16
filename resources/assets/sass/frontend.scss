@@ -154,10 +154,7 @@ body {
 .footer {
   background-color: $mainColor;
   border-radius: 8px;
-
-  p, h4 {
-    color: #fff;
-  }
+  margin-top:50px;
 
   .footer-logo {
     background: $mainColor;
@@ -166,9 +163,6 @@ body {
     margin-bottom: -30px;
   }
 
-  .open-hours {
-    text-align: right;
-  }
 }
 
 /* slider */
