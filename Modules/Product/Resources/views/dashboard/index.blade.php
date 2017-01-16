@@ -3,7 +3,7 @@
 $modul = 'product';
 $newString = 'Termék';
 @endphp
-@section('title', config('hunion.title_prefix') . 'Kezelőpult')
+@section('title', config('hunion.title_prefix') . 'Termékkezelő')
 
 @section('content')
 
@@ -18,7 +18,6 @@ $newString = 'Termék';
             <tr>
                 <th>#</th>
                 <th>Megnevezés</th>
-                <th>Kép</th>
                 <th>Létrehozva</th>
                 <th>Legutolsó Módosítás</th>
                 <th>Műveletek</th>
@@ -29,7 +28,6 @@ $newString = 'Termék';
                 <tr>
                     <td><a href="product/{{ $product->id }}/edit">{{ $key + 1 + (($products->currentPage() - 1) * $products->perPage())}}.</a></td>
                     <td>{{ $product->name }}</td>
-                    <td><img src="{{asset('images/product/tn-'.$product->image)}}" height="50px"></td>
                     <td>{{ $product->created_at }} - {{ $product->created_at->diffForHumans() }}</td>
                     <td>{{ $product->updated_at }} - {{ $product->updated_at->diffForHumans() }}</td>
                     <td>  @include('dashboard::layouts.partials._row_actions_min',['row_id'=> $product->id]) </td>

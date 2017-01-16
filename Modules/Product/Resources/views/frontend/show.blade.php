@@ -5,7 +5,7 @@
 
             <h1>{{ $product->name }} - <small>Kiszerelés: {{ $product->packings }}</small></h1>
 
-            <p class="">{{ $product->description }}</p>
+            <p class="">{!! $product->description !!}</p>
 
         @if(isset($product->table))
             {!! $product->table !!}

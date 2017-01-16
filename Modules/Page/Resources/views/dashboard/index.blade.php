@@ -2,7 +2,7 @@
 @php
 $modul = 'page';
 @endphp
-@section('title', config('ibolya.title_prefix') . 'Oldal kezelő')
+@section('title', config('hunion.title_prefix') . 'Oldalkezelő')
 
 @section('content')
 

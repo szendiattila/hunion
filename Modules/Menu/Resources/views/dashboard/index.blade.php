@@ -2,7 +2,7 @@
 @php
 $modul = 'menu';
 @endphp
-@section('title', config('ibolya.title_prefix') . 'Menükezelő')
+@section('title', config('hunion.title_prefix') . 'Menükezelő')
 
 @section('content')
 

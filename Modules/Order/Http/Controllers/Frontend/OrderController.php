@@ -22,7 +22,7 @@ class OrderController extends Controller
     {
         $order = Order::create($request->all());
 
-        Mail::to($order->email)->send(new OrderPlaced($order));
+        Mail::to('hunion@tolna.net')->send(new OrderPlaced($order));
 
         return redirect('sikeres-ajanlatkeres');
     }

@@ -2,7 +2,7 @@
 @php
 $modul = 'order';
 @endphp
-@section('title', config('ibolya.title_prefix') . 'Rendelés kezelő')
+@section('title', config('hunion.title_prefix') . 'Rendeléskezelő')
 
 @section('content')
 
